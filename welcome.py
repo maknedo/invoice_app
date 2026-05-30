@@ -396,12 +396,10 @@ class MainWindow:
         self.root.bind('<Configure>', self.on_resize)
         
     def setup_styles(self):
-        """Setup custom styles"""
         style = ttk.Style()
         style.theme_use('clam')
         
     def create_gradient(self):
-        """Create gradient background"""
         width = self.canvas.winfo_reqwidth()
         height = self.canvas.winfo_reqheight()
         
@@ -436,13 +434,11 @@ class MainWindow:
                 )
     
     def hex_to_rgb(self, hex_color):
-        """Convert hex color to RGB"""
         hex_color = hex_color.lstrip('#')
         return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
         
     def build_ui(self):
-        """Build the UI components"""
-        # Add padding
+        inner_frame = tk.Frame(self.content_frame, bg='#ffffff', padx=60, pady=50)
         inner_frame = tk.Frame(self.content_frame, bg='#ffffff', padx=60, pady=50)
         inner_frame.pack(fill=tk.BOTH, expand=True)
         
@@ -571,8 +567,7 @@ class MainWindow:
         self.version_label = version_label
         
     def animate_entrance(self):
-        """Animate entrance of UI elements"""
-        # Hide elements initially
+        self.icon_label.place_forget()
         self.icon_label.place_forget()
         self.title_label.place_forget()
         self.subtitle_label.place_forget()
@@ -598,23 +593,19 @@ class MainWindow:
             self.root.after(1100 + i * 100, lambda l=text_lbl: self.fade_in(l, 0))
             
     def fade_in(self, widget, alpha):
-        """Fade in animation"""
         widget.pack()
-        
+
     def slide_in(self, widget, direction):
-        """Slide in animation"""
         widget.pack()
         
     def center_content(self):
-        """Center content in canvas"""
-        # Force update to get actual dimensions
+        self.root.update_idletasks()
         self.root.update_idletasks()
         width = self.canvas.winfo_width()
         height = self.canvas.winfo_height()
         self.canvas.coords(self.canvas_window, width // 2, height // 2)
     
     def on_resize(self, event):
-        """Handle window resize"""
         if event.widget == self.root:
             self.create_gradient()
             # Update canvas window position
@@ -629,7 +620,6 @@ class MainWindow:
         new_root.mainloop()
         
     def on_close_invoice(self, window):
-        """Handle invoice window close"""
         window.destroy()
         self.root.deiconify()
 

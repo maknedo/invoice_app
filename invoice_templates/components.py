@@ -1,5 +1,3 @@
-"""Reusable drawing components for invoice templates."""
-
 from __future__ import annotations
 
 from typing import Dict, Iterable, List, Sequence

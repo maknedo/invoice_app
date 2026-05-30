@@ -28,8 +28,8 @@ pip install -r requirements.txt
 ## كيفية الاستخدام
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/print_invoice.git
-cd print_invoice
+git clone https://github.com/YOUR_USERNAME/invoice_app.git
+cd invoice_app
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
@@ -44,7 +44,7 @@ python main.py
 ## بنية المشروع
 
 ```
-print_invoice/
+invoice_app/
 ├── main.py
 ├── invoice_gui.py
 ├── invoice_calculator.py

@@ -1,5 +1,3 @@
-"""Theme definitions for invoice templates."""
-
 from __future__ import annotations
 
 from reportlab.lib import colors

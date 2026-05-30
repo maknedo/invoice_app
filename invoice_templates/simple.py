@@ -1,5 +1,3 @@
-"""Simple invoice template implementation redesigned for clarity and compliance."""
-
 from __future__ import annotations
 
 import os
@@ -15,8 +13,6 @@ from .themes import SIMPLE_THEME
 
 
 class SimpleInvoiceTemplate(BaseInvoiceTemplate):
-    """Modernised simple invoice with structured layout inspired by reference design."""
-
     def __init__(self, font_name: str = 'Arial', custom_font_path: str = None) -> None:
         super().__init__(font_name, custom_font_path)
         self.template_name = "فاتورة ضريبية"
@@ -45,12 +41,10 @@ class SimpleInvoiceTemplate(BaseInvoiceTemplate):
     # ------------------------------------------------------------------
     @staticmethod
     def _mm_to_pt(value: float) -> float:
-        """Convert millimetres to points."""
         return value * 72 / 25.4
 
     @staticmethod
     def _format_amount(value: float | Decimal | str, currency: str | None = None) -> str:
-        """Format numeric values with thousands separators and two decimals."""
         try:
             number = Decimal(str(value))
         except (InvalidOperation, TypeError):
@@ -71,7 +65,6 @@ class SimpleInvoiceTemplate(BaseInvoiceTemplate):
         english_font_size: float = 7.5,
         color: colors.Color | None = None,
     ) -> None:
-        """Render two-line label (Arabic above English) aligned to the right."""
         if color:
             document.setFillColor(color)
         document.setFont(self.arabic_font, arabic_font_size)

@@ -1,5 +1,3 @@
-"""Common utilities and base classes for invoice templates."""
-
 from __future__ import annotations
 
 import base64
@@ -24,8 +22,6 @@ LOGGER = logging.getLogger(__name__)
 
 @dataclass
 class TemplateTheme:
-    """Visual configuration shared by templates."""
-
     primary: colors.Color
     secondary: colors.Color
     accent: colors.Color
@@ -59,8 +55,6 @@ FONT_MAP = {
 
 
 class BaseInvoiceTemplate:
-    """Base class for invoice templates providing shared utilities."""
-
     template_name: str = ""
     theme: TemplateTheme
 
@@ -72,7 +66,6 @@ class BaseInvoiceTemplate:
         self._qr_file_counter = 0
     
     def apply_custom_colors(self, custom_colors: Dict[str, str]) -> None:
-        """Apply custom colors to the theme if provided."""
         if not custom_colors:
             return
         
@@ -206,7 +199,6 @@ class BaseInvoiceTemplate:
         return f"{today}T{normalized_time}"
 
     def build_iso_timestamp(self, invoice_data: Dict[str, any]) -> str:
-        """Return ISO timestamp without trailing Z (matching QR generator GUI)."""
         date_str = invoice_data.get("date", "")
         time_str = invoice_data.get("time", "")
         normalized = self._normalize_timestamp_fields(date_str, time_str)

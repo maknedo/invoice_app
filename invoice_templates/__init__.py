@@ -1,8 +1,3 @@
-"""Invoice templates package entry point.
-
-Provides template factory utilities and exposes available invoice templates.
-"""
-
 from __future__ import annotations
 
 from typing import Dict, Type

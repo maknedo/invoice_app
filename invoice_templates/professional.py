@@ -1,5 +1,3 @@
-"""Professional invoice template implementation."""
-
 from __future__ import annotations
 
 import os
@@ -66,7 +64,6 @@ class ProfessionalInvoiceTemplate(BaseInvoiceTemplate):
         return y - 100
 
     def draw_qr_code(self, document: canvas.Canvas, invoice_data: Dict[str, any], x: float, y: float, size: float = 70) -> None:
-        """Draw QR Code at specified position without frame for elegant look."""
         qr_image_path = ""
         try:
             qr_image_path = self.generate_qr_code(invoice_data)
@@ -225,7 +222,6 @@ class ProfessionalInvoiceTemplate(BaseInvoiceTemplate):
         return y - 15
 
     def _calculate_totals_from_items(self, invoice_data: Dict[str, any]) -> Dict[str, float]:
-        """Calculate totals directly from items data for consistency."""
         subtotal_before_discount = 0.0
         total_discount = 0.0
         total_tax = 0.0

@@ -1,5 +1,3 @@
-"""QR Code Generator GUI for ZATCA Invoice Standard - Enhanced UI."""
-
 import base64
 import os
 import tkinter as tk
@@ -11,8 +9,6 @@ from PIL import Image, ImageTk
 
 
 class ModernEntry(tk.Frame):
-    """Modern styled entry widget with floating label"""
-    
     def __init__(self, parent, label_text, default_value="", **kwargs):
         super().__init__(parent, bg='#ffffff')
         
@@ -66,8 +62,6 @@ class ModernEntry(tk.Frame):
 
 
 class ModernButton(tk.Button):
-    """Modern styled button with hover effects"""
-    
     def __init__(self, parent, text, command, icon="", bg_color='#667eea', **kwargs):
         self.default_bg = bg_color
         self.hover_bg = self.adjust_color(bg_color, -20)
@@ -92,7 +86,6 @@ class ModernButton(tk.Button):
         self.bind('<Leave>', self.on_leave)
         
     def adjust_color(self, hex_color, amount):
-        """Adjust color brightness"""
         hex_color = hex_color.lstrip('#')
         r, g, b = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
         r = max(0, min(255, r + amount))
@@ -395,7 +388,6 @@ class QRGeneratorWindow:
         self.invoice_datetime.set(current_time)
         
     def generate_tlv(self, tag, value):
-        """Generate TLV encoding for a single field."""
         value_bytes = value.encode('utf-8')
         length = len(value_bytes)
         

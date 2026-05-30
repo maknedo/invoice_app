@@ -1,5 +1,3 @@
-"""Rawayih invoice template - table-based layout matching the exact structure."""
-
 from __future__ import annotations
 
 import os
