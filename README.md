@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ## كيفية الاستخدام
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/invoice_app.git
+git clone https://github.com/maknedo/invoice_app.git
 cd invoice_app
 python -m venv venv
 venv\Scripts\activate
@@ -58,6 +58,15 @@ invoice_app/
 ├── requirements.txt
 └── README.md
 ```
+
+## لقطات الشاشة
+
+![شاشة البداية](images/Screenshots/1.png)  |  ![بيانات الفاتورة](images/Screenshots/2.png)
+:-------------------------:|:-------------------------:
+![الأصناف](images/Screenshots/3.png)  |  ![نموذج فاتورة](images/Screenshots/4.png)
+![نموذج فاتورة 2](images/Screenshots/5.png)  |  ![نموذج فاتورة 3](images/Screenshots/6.png)
+![مولد QR](images/Screenshots/7.png)  |  ![معلومات المطور](images/Screenshots/8.png)
+![الفاتورة](images/Screenshots/9.png)
 
 ## نماذج الفواتير
 
