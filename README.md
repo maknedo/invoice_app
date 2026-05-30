@@ -73,7 +73,7 @@ invoice_app/
 - Standard - نموذج أساسي
 - Simple - نموذج مبسط
 - Professional - نموذج احترافي
-- Rawayih - نموذج روائح بيتك
+- Rawayih - نموذج كلاسيكي
 
 ## الترخيص
 
